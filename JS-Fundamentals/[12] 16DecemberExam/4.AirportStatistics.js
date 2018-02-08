@@ -1,3 +1,5 @@
-function solve() {
-    
+function solve(arr) {
+    for (let string of arr) {
+        
+    }
 }
