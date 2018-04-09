@@ -17,14 +17,14 @@ function solve(kingdomsObject, battles) {
                 }
             } else {
                 sortedKingdoms[kingdom][general] = {};
-                sortedKingdoms[kingdom][general][army] = armyValue
+                sortedKingdoms[kingdom][general][army] = armyValue;
                 sortedKingdoms[kingdom][general][wins] = 0;
                 sortedKingdoms[kingdom][general][losses] = 0;
             }
         } else {
             sortedKingdoms[kingdom] = {};
             sortedKingdoms[kingdom][general] = {};
-            sortedKingdoms[kingdom][general][army] = armyValue
+            sortedKingdoms[kingdom][general][army] = armyValue;
             sortedKingdoms[kingdom][general][wins] = 0;
             sortedKingdoms[kingdom][general][losses] = 0;
         }
@@ -52,6 +52,8 @@ function solve(kingdomsObject, battles) {
         }
         else break;
     }
+
+
   //тук само съм се опитал да сортирам, нз  for (let obj in sortedKingdoms) {
   //тук само съм се опитал да сортирам, нз      for (let key in obj){
   //тук само съм се опитал да сортирам, нз          let sortedKeys = Object.keys(obj[key]).sort((a,b) => obj[key][a]-obj[key][b])

@@ -1,16 +1,19 @@
-function formatCurrency(separator, symbol, symbolFirst, value) {
+function currencyFormatter(separator, symbol, symbolFirst, value) {
     let result = Math.trunc(value) + separator;
-    result += value.toFixed(2).substr(-2,2);
+    result += value.toFixed(2).substr(-2, 2);
     if (symbolFirst) return symbol + ' ' + result;
     else return result + ' ' + symbol;
 }
 
-let formatter = getDollarFormatter(formatCurrency)(1000)
-console.log(formatter)
+//function result(func){
+//    return function(value){
+//       return func(',', '$', true, value);
+//    }
+//}
 
-function getDollarFormatter(outer){
-    function dollarFormatter(value) {
-        return outer(',', '$', true, value);
-    };
-    return dollarFormatter;
+let dollarFormatter = function(value){
+    return currencyFormatter(',', '$', true, value);
 }
+console.log(dollarFormatter(5345));   // $ 5345,00
+console.log(dollarFormatter(3.1429)); // $ 3,14
+console.log(dollarFormatter(2.709));  // $ 2,71

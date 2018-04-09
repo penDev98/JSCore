@@ -1,11 +1,10 @@
-function solve(arr, string){
-    if(string === "asc"){
-        arr.sort((a, b) => a - b)
+function solve(arr, command){
+    switch(command){
+        case 'asc':
+            return arr.sort((a,b) => a - b);
+            break;
+        case 'desc':
+            return arr.sort((a,b) => b - a);
+            break;
     }
-    else if(string === 'desc'){
-        arr.sort((a, b) => b - a)
-    }
-    return arr;
 }
-
-console.log(solve([14, 7, 17, 6, 8], 'desc'));

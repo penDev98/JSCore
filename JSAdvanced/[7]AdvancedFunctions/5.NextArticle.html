@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Next Article</title>
-    <link rel="stylesheet" href="nextArticle.css">
-    <script src="../../jQuery.js"></script>
+    <style>div{width:600px; text-align: center; font-size: 1.5em} article{border: 2px solid blue; padding: 2em; margin: 1em}</style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="nextArticle.js"></script>
 </head>
-
 <body>
 <div id="content"></div>
-<div>
-    <button onclick="showNext()">Show Next Article</button>
-</div>
+<div><button onclick="showNext()">Show Next Article</button></div>
 <script>
-    let articles = [
+    let articles =[
         "Cats are the most popular pet in the United States: There are 88 million pet cats and 74 million dogs.",
         "A group of cats is called a clowder.",
         "Cats have over 20 muscles that control their ears.",
@@ -27,5 +21,4 @@
     let showNext = getArticleGenerator(articles);
 </script>
 </body>
-
 </html>

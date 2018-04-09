@@ -1,16 +1,25 @@
-function processCommands(commands) {
-    let commandProcessor = (function () {
-        let text = "";
-        return {
-            append: newText => text += newText,
-            removeStart: count => text = text.slice(count),
-            removeEnd: count => text = text.slice(0, text.length-count),
-            print: () => console.log(text)
+function commandProcessor(arr){
+    let text = '';
+    for (let command of arr) {
+        let currentCommand = command.split(' ');
+        switch(currentCommand[0]){
+            case 'append':
+                text += currentCommand[1];
+                break;
+            case 'removeStart':
+                text = text.slice(Number(currentCommand[1]));
+                break;
+            case 'removeEnd':
+                text = text.slice(0, text.length-Number(currentCommand[1]));
+                break;
+            case 'print':
+                console.log(text);
         }
-    }());
-
-    for(let cmd of commands){
-        let[cmdName, arg] = cmd.split(' ');
-        commandProcessor[cmdName](arg);
     }
 }
+commandProcessor(['append hello',
+    'append again',
+    'removeStart 3',
+    'removeEnd 4',
+    'print']
+);
